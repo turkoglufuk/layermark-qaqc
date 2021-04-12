@@ -9,7 +9,7 @@ module.exports = {
       errors: true
     },
     proxy: {
-      '/layernote-api': {
+      '/layerexchange-api': {
         target: `https://gis.layermark.com`,
         logLevel: 'debug',
         changeOrigin: true

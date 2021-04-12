@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import mixin from './mixin'
 import './router/permission' // permission control
+import './utils/eventBus'
 import { loadScript } from 'esri-loader'
 Vue.config.productionTip = false
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="valveItem" :class="{'selected-valve-item': isValveSelected, 'nonselected-valve-item': !isValveSelected}">
+    <div class="valveItem" :class="{'selected-valve-item': isValveSelected, 'nonselected-valve-item': !isValveSelected}" @click="animateMap()">
       <div class="icon-div">
         <div class="icon-num">1</div>
         <img class="poinpicImg" src="../assets/images/marker_red.png">
@@ -31,6 +31,8 @@
 </template>
 
 <script>
+import EventBus from '@/utils/eventBus'
+
 export default {
   name: 'ValveItem',
   components: {},
@@ -46,8 +48,12 @@ export default {
     return {
     }
   },
-  mounted() {},
+  mounted() {
+  },
   methods: {
+    animateMap() {
+      EventBus.$emit('navigate-map', this.valveItem.gemotery)
+    }
   }
 }
 </script>
