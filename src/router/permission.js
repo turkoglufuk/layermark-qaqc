@@ -10,8 +10,6 @@ const whiteList = ['/login', '/500', '/404']
 router.beforeEach(async(to, from, next) => {
   // start progress bar
   NProgress.start()
-  // set page title
-  document.title = to.meta.title
 
   console.log(to.path, store.getters.isLoggedIn)
   const token = localStorage.getItem('x-token')
